@@ -2,7 +2,6 @@
  * BuildConfigurationCloneManager - Manages cloning of build configurations
  */
 import { getTeamCityUrl } from '@/config';
-import type { BuildType } from '@/teamcity-client/models/build-type';
 import { debug, info, error as logError } from '@/utils/logger';
 
 import {
@@ -17,12 +16,6 @@ import {
   isVcsRootsResponse,
 } from './types/api-responses';
 import type { TeamCityUnifiedClient } from './types/client';
-
-type BuildTypeClonePayload = Partial<BuildTypeData> & {
-  id: string;
-  name: string;
-  project: { id: string };
-};
 
 export interface CloneOptions {
   name: string;
@@ -247,138 +240,46 @@ export class BuildConfigurationCloneManager {
   }
 
   /**
-   * Clone the build configuration
+   * Clone the build configuration using TeamCity's server-side copy API
+   * (sourceBuildTypeLocator + copyAllAssociatedSettings). This ensures locally-defined
+   * parameters, steps, triggers, VCS roots and all associated settings are copied
+   * correctly by the server rather than being reconstructed client-side.
    */
   async cloneConfiguration(
     source: BuildConfiguration,
     options: CloneOptions
   ): Promise<BuildConfiguration> {
-    // Generate new configuration ID
     const configId =
       options.id ?? this.generateBuildConfigId(options.targetProjectId, options.name);
 
-    // Build the configuration payload
-    const configPayload: BuildTypeClonePayload = {
-      id: configId,
+    const teamcityUrl = getTeamCityUrl();
+    const axios = this.client.getAxios();
+
+    const body = {
+      sourceBuildTypeLocator: `id:${source.id}`,
+      copyAllAssociatedSettings: true,
       name: options.name,
-      project: {
-        id: options.targetProjectId,
-      },
+      id: configId,
     };
 
-    // Add optional fields
-    if (options.description) {
-      configPayload.description = options.description;
-    }
-
-    // Copy template reference if exists
-    if (source.templateId) {
-      configPayload.templates = {
-        buildType: [{ id: source.templateId }],
-      };
-    }
-
-    // Add VCS root if provided
-    if (options.vcsRootId) {
-      configPayload['vcs-root-entries'] = {
-        'vcs-root-entry': [
-          {
-            'vcs-root': { id: options.vcsRootId },
-            'checkout-rules': '',
-          },
-        ],
-      };
-    }
-
-    // Copy build steps
-    if (source.steps && source.steps.length > 0) {
-      configPayload.steps = {
-        step: this.cloneBuildSteps(source.steps),
-      };
-    }
-
-    // Copy triggers
-    if (source.triggers && source.triggers.length > 0) {
-      configPayload.triggers = {
-        trigger: this.cloneTriggers(source.triggers),
-      };
-    }
-
-    // Copy features with deep cloning
-    if (source.features && source.features.length > 0) {
-      configPayload.features = {
-        feature: source.features.map((f) => this.deepCloneConfiguration(f)),
-      };
-    }
-
-    // Copy dependencies with reference updates
-    if (source.artifactDependencies && source.artifactDependencies.length > 0) {
-      configPayload['artifact-dependencies'] = {
-        'artifact-dependency': this.updateDependencyReferences(
-          source.artifactDependencies,
-          source.id,
-          configId
-        ),
-      };
-    }
-
-    if (source.snapshotDependencies && source.snapshotDependencies.length > 0) {
-      configPayload['snapshot-dependencies'] = {
-        'snapshot-dependency': this.updateDependencyReferences(
-          source.snapshotDependencies,
-          source.id,
-          configId
-        ),
-      };
-    }
-
-    // Add parameters
-    if (options.parameters && Object.keys(options.parameters).length > 0) {
-      configPayload.parameters = {
-        property: Object.entries(options.parameters).map(([name, value]) => ({
-          name,
-          value,
-        })),
-      };
-    }
-
-    // Handle build counter
-    if (options.copyBuildCounter && source.buildNumberCounter) {
-      configPayload.settings ??= { property: [] };
-      configPayload.settings.property?.push({
-        name: 'buildNumberCounter',
-        value: source.buildNumberCounter.toString(),
-      });
-    }
-
-    // Copy build number format
-    if (source.buildNumberFormat) {
-      configPayload.settings ??= { property: [] };
-      configPayload.settings.property?.push({
-        name: 'buildNumberPattern',
-        value: source.buildNumberFormat,
-      });
-    }
-
     try {
-      const response = await this.client.modules.buildTypes.createBuildType(
-        undefined,
-        this.prepareBuildTypePayload(configPayload)
+      const response = await axios.post<{ id?: string; name?: string; projectId?: string; description?: string }>(
+        `${teamcityUrl}/app/rest/projects/id:${options.targetProjectId}/buildTypes`,
+        body,
+        { headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' } }
       );
 
-      const teamcityUrl = getTeamCityUrl();
       const id = response.data.id;
       const name = response.data.name;
       if (!id || !name) {
         throw new Error('Clone response missing id or name');
       }
+
       const result: BuildConfiguration = {
         id,
         name,
         projectId: response.data.projectId ?? options.targetProjectId,
         description: response.data.description,
-        vcsRootId: options.vcsRootId,
-        parameters: options.parameters,
         url: `${teamcityUrl}/viewType.html?buildTypeId=${id}`,
       };
 
@@ -409,94 +310,6 @@ export class BuildConfigurationCloneManager {
       );
       throw error;
     }
-  }
-
-  /**
-   * Normalize cloned payload into the generated BuildType shape expected by the API
-   */
-  private prepareBuildTypePayload(payload: BuildTypeClonePayload): BuildType {
-    const clone =
-      typeof structuredClone === 'function'
-        ? structuredClone(payload)
-        : (JSON.parse(JSON.stringify(payload)) as BuildTypeClonePayload);
-
-    if (typeof clone.id !== 'string' || typeof clone.name !== 'string') {
-      throw new Error('Invalid build configuration payload: missing id or name');
-    }
-
-    if (typeof clone.project?.id !== 'string') {
-      throw new Error('Invalid build configuration payload: missing project id');
-    }
-
-    return clone as BuildType;
-  }
-
-  /**
-   * Deep clone configuration object and remove server-generated fields
-   */
-  private deepCloneConfiguration<T>(config: T): T {
-    // Create a deep copy to avoid mutating the source
-    const cloned = JSON.parse(JSON.stringify(config)) as T & {
-      href?: unknown;
-      webUrl?: unknown;
-      locator?: unknown;
-      uuid?: unknown;
-      links?: unknown;
-      _links?: unknown;
-    };
-
-    // Remove server-generated fields that shouldn't be included in the clone
-    delete cloned.href;
-    delete cloned.webUrl;
-    delete cloned.locator;
-    delete cloned.uuid;
-    delete cloned.links;
-    delete cloned._links;
-
-    return cloned as T;
-  }
-
-  /**
-   * Clone build steps with new IDs
-   */
-  private cloneBuildSteps(steps: BuildTypeStep[]): BuildTypeStep[] {
-    return steps.map((step, index) => {
-      const clonedStep = this.deepCloneConfiguration(step);
-      clonedStep.id = `RUNNER_${index + 1}`;
-      return clonedStep;
-    });
-  }
-
-  /**
-   * Clone triggers with new IDs
-   */
-  private cloneTriggers(triggers: BuildTypeTrigger[]): BuildTypeTrigger[] {
-    return triggers.map((trigger, index) => {
-      const clonedTrigger = this.deepCloneConfiguration(trigger);
-      clonedTrigger.id = `TRIGGER_${index + 1}`;
-      return clonedTrigger;
-    });
-  }
-
-  /**
-   * Update internal references in dependencies
-   */
-  private updateDependencyReferences(
-    dependencies: BuildTypeDependency[],
-    oldId: string,
-    newId: string
-  ): BuildTypeDependency[] {
-    return dependencies.map((dep) => {
-      const clonedDep = this.deepCloneConfiguration(dep);
-      // Update any references to the old configuration ID
-      if (clonedDep.sourceBuildTypeId === oldId) {
-        clonedDep.sourceBuildTypeId = newId;
-      }
-      if (clonedDep.dependsOnBuildTypeId === oldId) {
-        clonedDep.dependsOnBuildTypeId = newId;
-      }
-      return clonedDep;
-    });
   }
 
   /**
