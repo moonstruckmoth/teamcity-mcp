@@ -1,0 +1,1 @@
+{"version":3,"file":"test-run-metadata.d.ts","sourceRoot":"","sources":["../../../../src/teamcity-client/models/test-run-metadata.ts"],"names":[],"mappings":"AAeA,OAAO,KAAK,EAAE,UAAU,EAAE,MAAM,eAAe,CAAC;AAOhD,MAAM,WAAW,eAAe;IAM9B,KAAK,CAAC,EAAE,MAAM,CAAC;IAMf,WAAW,CAAC,EAAE,KAAK,CAAC,UAAU,CAAC,CAAC;CACjC"}

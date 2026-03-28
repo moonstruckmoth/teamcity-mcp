@@ -1,0 +1,1 @@
+{"version":3,"file":"repository-state.d.ts","sourceRoot":"","sources":["../../../../src/teamcity-client/models/repository-state.ts"],"names":[],"mappings":"AAeA,OAAO,KAAK,EAAE,aAAa,EAAE,MAAM,kBAAkB,CAAC;AAOtD,MAAM,WAAW,eAAe;IAM9B,SAAS,CAAC,EAAE,MAAM,CAAC;IAMnB,KAAK,CAAC,EAAE,MAAM,CAAC;IAMf,MAAM,CAAC,EAAE,KAAK,CAAC,aAAa,CAAC,CAAC;CAC/B"}

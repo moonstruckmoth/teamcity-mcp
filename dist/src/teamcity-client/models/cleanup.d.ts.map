@@ -1,0 +1,1 @@
+{"version":3,"file":"cleanup.d.ts","sourceRoot":"","sources":["../../../../src/teamcity-client/models/cleanup.ts"],"names":[],"mappings":"AAeA,OAAO,KAAK,EAAE,IAAI,EAAE,MAAM,QAAQ,CAAC;AAGnC,OAAO,KAAK,EAAE,KAAK,EAAE,MAAM,SAAS,CAAC;AAOrC,MAAM,WAAW,OAAO;IAMtB,OAAO,CAAC,EAAE,OAAO,CAAC;IAMlB,kBAAkB,CAAC,EAAE,MAAM,CAAC;IAM5B,KAAK,CAAC,EAAE,KAAK,CAAC;IAMd,IAAI,CAAC,EAAE,IAAI,CAAC;CACb"}

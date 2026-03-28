@@ -1,0 +1,1 @@
+{"version":3,"file":"matrix-dependency.d.ts","sourceRoot":"","sources":["../../../../src/teamcity-client/models/matrix-dependency.ts"],"names":[],"mappings":"AAeA,OAAO,KAAK,EAAE,KAAK,EAAE,MAAM,SAAS,CAAC;AAGrC,OAAO,KAAK,EAAE,OAAO,EAAE,MAAM,WAAW,CAAC;AAOzC,MAAM,WAAW,gBAAgB;IAM/B,KAAK,CAAC,EAAE,KAAK,CAAC;IAMd,UAAU,CAAC,EAAE,OAAO,CAAC;CACtB"}

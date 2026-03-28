@@ -1,0 +1,1 @@
+{"version":3,"file":"permission-assignment.d.ts","sourceRoot":"","sources":["../../../../src/teamcity-client/models/permission-assignment.ts"],"names":[],"mappings":"AAeA,OAAO,KAAK,EAAE,UAAU,EAAE,MAAM,cAAc,CAAC;AAG/C,OAAO,KAAK,EAAE,OAAO,EAAE,MAAM,WAAW,CAAC;AAOzC,MAAM,WAAW,oBAAoB;IAMnC,aAAa,CAAC,EAAE,OAAO,CAAC;IAMxB,UAAU,CAAC,EAAE,UAAU,CAAC;IAMxB,OAAO,CAAC,EAAE,OAAO,CAAC;CACnB"}

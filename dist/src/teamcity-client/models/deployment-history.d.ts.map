@@ -1,0 +1,1 @@
+{"version":3,"file":"deployment-history.d.ts","sourceRoot":"","sources":["../../../../src/teamcity-client/models/deployment-history.ts"],"names":[],"mappings":"AAeA,OAAO,KAAK,EAAE,oBAAoB,EAAE,MAAM,0BAA0B,CAAC;AAOrE,MAAM,WAAW,iBAAiB;IAMhC,YAAY,CAAC,EAAE,oBAAoB,CAAC;IAMpC,MAAM,CAAC,EAAE,KAAK,CAAC,oBAAoB,CAAC,CAAC;CACtC"}

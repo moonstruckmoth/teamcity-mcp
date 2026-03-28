@@ -1,0 +1,1 @@
+{"version":3,"file":"plugin.d.ts","sourceRoot":"","sources":["../../../../src/teamcity-client/models/plugin.ts"],"names":[],"mappings":"AAeA,OAAO,KAAK,EAAE,UAAU,EAAE,MAAM,cAAc,CAAC;AAO/C,MAAM,WAAW,MAAM;IAMrB,IAAI,CAAC,EAAE,MAAM,CAAC;IAMd,WAAW,CAAC,EAAE,MAAM,CAAC;IAMrB,OAAO,CAAC,EAAE,MAAM,CAAC;IAMjB,QAAQ,CAAC,EAAE,MAAM,CAAC;IAMlB,UAAU,CAAC,EAAE,UAAU,CAAC;CACzB"}

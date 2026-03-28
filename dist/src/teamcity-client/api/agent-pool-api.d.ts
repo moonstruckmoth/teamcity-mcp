@@ -1,0 +1,92 @@
+import type { AxiosInstance, AxiosPromise, RawAxiosRequestConfig } from 'axios';
+import { BaseAPI, type RequestArgs } from '../base';
+import type { Configuration } from '../configuration';
+import type { Agent } from '../models';
+import type { AgentPool } from '../models';
+import type { AgentPools } from '../models';
+import type { Agents } from '../models';
+import type { AuthorizationTokensRequirements } from '../models';
+import type { Items } from '../models';
+import type { Project } from '../models';
+import type { Projects } from '../models';
+export declare const AgentPoolApiAxiosParamCreator: (configuration?: Configuration) => {
+    addAgentToAgentPool: (agentPoolLocator: string, fields?: string, body?: Agent, options?: RawAxiosRequestConfig) => Promise<RequestArgs>;
+    addProjectToAgentPool: (agentPoolLocator: string, body?: Project, options?: RawAxiosRequestConfig) => Promise<RequestArgs>;
+    createAgentPool: (body?: AgentPool, options?: RawAxiosRequestConfig) => Promise<RequestArgs>;
+    deleteAgentPool: (agentPoolLocator: string, options?: RawAxiosRequestConfig) => Promise<RequestArgs>;
+    deleteAllProjectsFromAgentPool: (agentPoolLocator: string, options?: RawAxiosRequestConfig) => Promise<RequestArgs>;
+    deleteProjectFromAgentPool: (agentPoolLocator: string, projectLocator: string, options?: RawAxiosRequestConfig) => Promise<RequestArgs>;
+    generateAutomaticAgentAuthorizationTokens: (agentPoolLocator: string, body?: AuthorizationTokensRequirements, options?: RawAxiosRequestConfig) => Promise<RequestArgs>;
+    getAgentPoolOfAgentPool: (agentPoolLocator: string, fields?: string, options?: RawAxiosRequestConfig) => Promise<RequestArgs>;
+    getAllAgentPools: (locator?: string, fields?: string, options?: RawAxiosRequestConfig) => Promise<RequestArgs>;
+    getAllAgentsFromAgentPool: (agentPoolLocator: string, locator?: string, fields?: string, options?: RawAxiosRequestConfig) => Promise<RequestArgs>;
+    getAllProjectsFromAgentPool: (agentPoolLocator: string, fields?: string, options?: RawAxiosRequestConfig) => Promise<RequestArgs>;
+    getFieldFromAgentPool: (agentPoolLocator: string, field: string, options?: RawAxiosRequestConfig) => Promise<RequestArgs>;
+    setAgentPoolField: (agentPoolLocator: string, field: string, body?: string, options?: RawAxiosRequestConfig) => Promise<RequestArgs>;
+    setAgentPoolProjects: (agentPoolLocator: string, body?: Projects, options?: RawAxiosRequestConfig) => Promise<RequestArgs>;
+};
+export declare const AgentPoolApiFp: (configuration?: Configuration) => {
+    addAgentToAgentPool(agentPoolLocator: string, fields?: string, body?: Agent, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Agent>>;
+    addProjectToAgentPool(agentPoolLocator: string, body?: Project, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Project>>;
+    createAgentPool(body?: AgentPool, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AgentPool>>;
+    deleteAgentPool(agentPoolLocator: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>>;
+    deleteAllProjectsFromAgentPool(agentPoolLocator: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>>;
+    deleteProjectFromAgentPool(agentPoolLocator: string, projectLocator: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>>;
+    generateAutomaticAgentAuthorizationTokens(agentPoolLocator: string, body?: AuthorizationTokensRequirements, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Items>>;
+    getAgentPoolOfAgentPool(agentPoolLocator: string, fields?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AgentPool>>;
+    getAllAgentPools(locator?: string, fields?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AgentPools>>;
+    getAllAgentsFromAgentPool(agentPoolLocator: string, locator?: string, fields?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Agents>>;
+    getAllProjectsFromAgentPool(agentPoolLocator: string, fields?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Projects>>;
+    getFieldFromAgentPool(agentPoolLocator: string, field: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<string>>;
+    setAgentPoolField(agentPoolLocator: string, field: string, body?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<string>>;
+    setAgentPoolProjects(agentPoolLocator: string, body?: Projects, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Projects>>;
+};
+export declare const AgentPoolApiFactory: (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) => {
+    addAgentToAgentPool(agentPoolLocator: string, fields?: string, body?: Agent, options?: RawAxiosRequestConfig): AxiosPromise<Agent>;
+    addProjectToAgentPool(agentPoolLocator: string, body?: Project, options?: RawAxiosRequestConfig): AxiosPromise<Project>;
+    createAgentPool(body?: AgentPool, options?: RawAxiosRequestConfig): AxiosPromise<AgentPool>;
+    deleteAgentPool(agentPoolLocator: string, options?: RawAxiosRequestConfig): AxiosPromise<void>;
+    deleteAllProjectsFromAgentPool(agentPoolLocator: string, options?: RawAxiosRequestConfig): AxiosPromise<void>;
+    deleteProjectFromAgentPool(agentPoolLocator: string, projectLocator: string, options?: RawAxiosRequestConfig): AxiosPromise<void>;
+    generateAutomaticAgentAuthorizationTokens(agentPoolLocator: string, body?: AuthorizationTokensRequirements, options?: RawAxiosRequestConfig): AxiosPromise<Items>;
+    getAgentPoolOfAgentPool(agentPoolLocator: string, fields?: string, options?: RawAxiosRequestConfig): AxiosPromise<AgentPool>;
+    getAllAgentPools(locator?: string, fields?: string, options?: RawAxiosRequestConfig): AxiosPromise<AgentPools>;
+    getAllAgentsFromAgentPool(agentPoolLocator: string, locator?: string, fields?: string, options?: RawAxiosRequestConfig): AxiosPromise<Agents>;
+    getAllProjectsFromAgentPool(agentPoolLocator: string, fields?: string, options?: RawAxiosRequestConfig): AxiosPromise<Projects>;
+    getFieldFromAgentPool(agentPoolLocator: string, field: string, options?: RawAxiosRequestConfig): AxiosPromise<string>;
+    setAgentPoolField(agentPoolLocator: string, field: string, body?: string, options?: RawAxiosRequestConfig): AxiosPromise<string>;
+    setAgentPoolProjects(agentPoolLocator: string, body?: Projects, options?: RawAxiosRequestConfig): AxiosPromise<Projects>;
+};
+export interface AgentPoolApiInterface {
+    addAgentToAgentPool(agentPoolLocator: string, fields?: string, body?: Agent, options?: RawAxiosRequestConfig): AxiosPromise<Agent>;
+    addProjectToAgentPool(agentPoolLocator: string, body?: Project, options?: RawAxiosRequestConfig): AxiosPromise<Project>;
+    createAgentPool(body?: AgentPool, options?: RawAxiosRequestConfig): AxiosPromise<AgentPool>;
+    deleteAgentPool(agentPoolLocator: string, options?: RawAxiosRequestConfig): AxiosPromise<void>;
+    deleteAllProjectsFromAgentPool(agentPoolLocator: string, options?: RawAxiosRequestConfig): AxiosPromise<void>;
+    deleteProjectFromAgentPool(agentPoolLocator: string, projectLocator: string, options?: RawAxiosRequestConfig): AxiosPromise<void>;
+    generateAutomaticAgentAuthorizationTokens(agentPoolLocator: string, body?: AuthorizationTokensRequirements, options?: RawAxiosRequestConfig): AxiosPromise<Items>;
+    getAgentPoolOfAgentPool(agentPoolLocator: string, fields?: string, options?: RawAxiosRequestConfig): AxiosPromise<AgentPool>;
+    getAllAgentPools(locator?: string, fields?: string, options?: RawAxiosRequestConfig): AxiosPromise<AgentPools>;
+    getAllAgentsFromAgentPool(agentPoolLocator: string, locator?: string, fields?: string, options?: RawAxiosRequestConfig): AxiosPromise<Agents>;
+    getAllProjectsFromAgentPool(agentPoolLocator: string, fields?: string, options?: RawAxiosRequestConfig): AxiosPromise<Projects>;
+    getFieldFromAgentPool(agentPoolLocator: string, field: string, options?: RawAxiosRequestConfig): AxiosPromise<string>;
+    setAgentPoolField(agentPoolLocator: string, field: string, body?: string, options?: RawAxiosRequestConfig): AxiosPromise<string>;
+    setAgentPoolProjects(agentPoolLocator: string, body?: Projects, options?: RawAxiosRequestConfig): AxiosPromise<Projects>;
+}
+export declare class AgentPoolApi extends BaseAPI implements AgentPoolApiInterface {
+    addAgentToAgentPool(agentPoolLocator: string, fields?: string, body?: Agent, options?: RawAxiosRequestConfig): Promise<import("axios").AxiosResponse<Agent, any, {}>>;
+    addProjectToAgentPool(agentPoolLocator: string, body?: Project, options?: RawAxiosRequestConfig): Promise<import("axios").AxiosResponse<Project, any, {}>>;
+    createAgentPool(body?: AgentPool, options?: RawAxiosRequestConfig): Promise<import("axios").AxiosResponse<AgentPool, any, {}>>;
+    deleteAgentPool(agentPoolLocator: string, options?: RawAxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}>>;
+    deleteAllProjectsFromAgentPool(agentPoolLocator: string, options?: RawAxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}>>;
+    deleteProjectFromAgentPool(agentPoolLocator: string, projectLocator: string, options?: RawAxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}>>;
+    generateAutomaticAgentAuthorizationTokens(agentPoolLocator: string, body?: AuthorizationTokensRequirements, options?: RawAxiosRequestConfig): Promise<import("axios").AxiosResponse<Items, any, {}>>;
+    getAgentPoolOfAgentPool(agentPoolLocator: string, fields?: string, options?: RawAxiosRequestConfig): Promise<import("axios").AxiosResponse<AgentPool, any, {}>>;
+    getAllAgentPools(locator?: string, fields?: string, options?: RawAxiosRequestConfig): Promise<import("axios").AxiosResponse<AgentPools, any, {}>>;
+    getAllAgentsFromAgentPool(agentPoolLocator: string, locator?: string, fields?: string, options?: RawAxiosRequestConfig): Promise<import("axios").AxiosResponse<Agents, any, {}>>;
+    getAllProjectsFromAgentPool(agentPoolLocator: string, fields?: string, options?: RawAxiosRequestConfig): Promise<import("axios").AxiosResponse<Projects, any, {}>>;
+    getFieldFromAgentPool(agentPoolLocator: string, field: string, options?: RawAxiosRequestConfig): Promise<import("axios").AxiosResponse<string, any, {}>>;
+    setAgentPoolField(agentPoolLocator: string, field: string, body?: string, options?: RawAxiosRequestConfig): Promise<import("axios").AxiosResponse<string, any, {}>>;
+    setAgentPoolProjects(agentPoolLocator: string, body?: Projects, options?: RawAxiosRequestConfig): Promise<import("axios").AxiosResponse<Projects, any, {}>>;
+}
+//# sourceMappingURL=agent-pool-api.d.ts.map

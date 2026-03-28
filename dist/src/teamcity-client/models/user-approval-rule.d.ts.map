@@ -1,0 +1,1 @@
+{"version":3,"file":"user-approval-rule.d.ts","sourceRoot":"","sources":["../../../../src/teamcity-client/models/user-approval-rule.ts"],"names":[],"mappings":"AAeA,OAAO,KAAK,EAAE,IAAI,EAAE,MAAM,QAAQ,CAAC;AAOnC,MAAM,WAAW,gBAAgB;IAM/B,QAAQ,CAAC,EAAE,OAAO,CAAC;IAMnB,IAAI,CAAC,EAAE,IAAI,CAAC;CACb"}

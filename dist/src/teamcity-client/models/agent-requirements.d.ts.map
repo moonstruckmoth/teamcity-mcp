@@ -1,0 +1,1 @@
+{"version":3,"file":"agent-requirements.d.ts","sourceRoot":"","sources":["../../../../src/teamcity-client/models/agent-requirements.ts"],"names":[],"mappings":"AAeA,OAAO,KAAK,EAAE,gBAAgB,EAAE,MAAM,qBAAqB,CAAC;AAO5D,MAAM,WAAW,iBAAiB;IAMhC,KAAK,CAAC,EAAE,MAAM,CAAC;IAMf,mBAAmB,CAAC,EAAE,KAAK,CAAC,gBAAgB,CAAC,CAAC;CAC/C"}

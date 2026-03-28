@@ -1,0 +1,97 @@
+import type { AxiosInstance, AxiosPromise, RawAxiosRequestConfig } from 'axios';
+import { BaseAPI, type RequestArgs } from '../base';
+import type { Configuration } from '../configuration';
+import type { Agent } from '../models';
+import type { AgentPool } from '../models';
+import type { Agents } from '../models';
+import type { AuthorizedInfo } from '../models';
+import type { BuildTypes } from '../models';
+import type { Compatibilities } from '../models';
+import type { CompatibilityPolicy } from '../models';
+import type { EnabledInfo } from '../models';
+export declare const AgentApiAxiosParamCreator: (configuration?: Configuration) => {
+    deleteAgent: (agentLocator: string, options?: RawAxiosRequestConfig) => Promise<RequestArgs>;
+    getAgent: (agentLocator: string, fields?: string, options?: RawAxiosRequestConfig) => Promise<RequestArgs>;
+    getAgentField: (agentLocator: string, field: string, options?: RawAxiosRequestConfig) => Promise<RequestArgs>;
+    getAgentPool: (agentLocator: string, fields?: string, options?: RawAxiosRequestConfig) => Promise<RequestArgs>;
+    getAllAgents: (locator?: string, fields?: string, options?: RawAxiosRequestConfig) => Promise<RequestArgs>;
+    getAuthorizedInfo: (agentLocator: string, fields?: string, options?: RawAxiosRequestConfig) => Promise<RequestArgs>;
+    getBuildConfigurationRunPolicy: (agentLocator: string, fields?: string, options?: RawAxiosRequestConfig) => Promise<RequestArgs>;
+    getCompatibleBuildTypes: (agentLocator: string, fields?: string, options?: RawAxiosRequestConfig) => Promise<RequestArgs>;
+    getEnabledInfo: (agentLocator: string, fields?: string, options?: RawAxiosRequestConfig) => Promise<RequestArgs>;
+    getIncompatibleBuildTypes: (agentLocator: string, fields?: string, options?: RawAxiosRequestConfig) => Promise<RequestArgs>;
+    setAgentField: (agentLocator: string, field: string, body?: string, options?: RawAxiosRequestConfig) => Promise<RequestArgs>;
+    setAgentPool: (agentLocator: string, fields?: string, body?: AgentPool, options?: RawAxiosRequestConfig) => Promise<RequestArgs>;
+    setAuthorizedInfo: (agentLocator: string, fields?: string, body?: AuthorizedInfo, options?: RawAxiosRequestConfig) => Promise<RequestArgs>;
+    setBuildConfigurationRunPolicy: (agentLocator: string, fields?: string, body?: CompatibilityPolicy, options?: RawAxiosRequestConfig) => Promise<RequestArgs>;
+    setEnabledInfo: (agentLocator: string, fields?: string, body?: EnabledInfo, options?: RawAxiosRequestConfig) => Promise<RequestArgs>;
+};
+export declare const AgentApiFp: (configuration?: Configuration) => {
+    deleteAgent(agentLocator: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>>;
+    getAgent(agentLocator: string, fields?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Agent>>;
+    getAgentField(agentLocator: string, field: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<string>>;
+    getAgentPool(agentLocator: string, fields?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AgentPool>>;
+    getAllAgents(locator?: string, fields?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Agents>>;
+    getAuthorizedInfo(agentLocator: string, fields?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AuthorizedInfo>>;
+    getBuildConfigurationRunPolicy(agentLocator: string, fields?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CompatibilityPolicy>>;
+    getCompatibleBuildTypes(agentLocator: string, fields?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BuildTypes>>;
+    getEnabledInfo(agentLocator: string, fields?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EnabledInfo>>;
+    getIncompatibleBuildTypes(agentLocator: string, fields?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Compatibilities>>;
+    setAgentField(agentLocator: string, field: string, body?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<string>>;
+    setAgentPool(agentLocator: string, fields?: string, body?: AgentPool, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AgentPool>>;
+    setAuthorizedInfo(agentLocator: string, fields?: string, body?: AuthorizedInfo, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AuthorizedInfo>>;
+    setBuildConfigurationRunPolicy(agentLocator: string, fields?: string, body?: CompatibilityPolicy, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CompatibilityPolicy>>;
+    setEnabledInfo(agentLocator: string, fields?: string, body?: EnabledInfo, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EnabledInfo>>;
+};
+export declare const AgentApiFactory: (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) => {
+    deleteAgent(agentLocator: string, options?: RawAxiosRequestConfig): AxiosPromise<void>;
+    getAgent(agentLocator: string, fields?: string, options?: RawAxiosRequestConfig): AxiosPromise<Agent>;
+    getAgentField(agentLocator: string, field: string, options?: RawAxiosRequestConfig): AxiosPromise<string>;
+    getAgentPool(agentLocator: string, fields?: string, options?: RawAxiosRequestConfig): AxiosPromise<AgentPool>;
+    getAllAgents(locator?: string, fields?: string, options?: RawAxiosRequestConfig): AxiosPromise<Agents>;
+    getAuthorizedInfo(agentLocator: string, fields?: string, options?: RawAxiosRequestConfig): AxiosPromise<AuthorizedInfo>;
+    getBuildConfigurationRunPolicy(agentLocator: string, fields?: string, options?: RawAxiosRequestConfig): AxiosPromise<CompatibilityPolicy>;
+    getCompatibleBuildTypes(agentLocator: string, fields?: string, options?: RawAxiosRequestConfig): AxiosPromise<BuildTypes>;
+    getEnabledInfo(agentLocator: string, fields?: string, options?: RawAxiosRequestConfig): AxiosPromise<EnabledInfo>;
+    getIncompatibleBuildTypes(agentLocator: string, fields?: string, options?: RawAxiosRequestConfig): AxiosPromise<Compatibilities>;
+    setAgentField(agentLocator: string, field: string, body?: string, options?: RawAxiosRequestConfig): AxiosPromise<string>;
+    setAgentPool(agentLocator: string, fields?: string, body?: AgentPool, options?: RawAxiosRequestConfig): AxiosPromise<AgentPool>;
+    setAuthorizedInfo(agentLocator: string, fields?: string, body?: AuthorizedInfo, options?: RawAxiosRequestConfig): AxiosPromise<AuthorizedInfo>;
+    setBuildConfigurationRunPolicy(agentLocator: string, fields?: string, body?: CompatibilityPolicy, options?: RawAxiosRequestConfig): AxiosPromise<CompatibilityPolicy>;
+    setEnabledInfo(agentLocator: string, fields?: string, body?: EnabledInfo, options?: RawAxiosRequestConfig): AxiosPromise<EnabledInfo>;
+};
+export interface AgentApiInterface {
+    deleteAgent(agentLocator: string, options?: RawAxiosRequestConfig): AxiosPromise<void>;
+    getAgent(agentLocator: string, fields?: string, options?: RawAxiosRequestConfig): AxiosPromise<Agent>;
+    getAgentField(agentLocator: string, field: string, options?: RawAxiosRequestConfig): AxiosPromise<string>;
+    getAgentPool(agentLocator: string, fields?: string, options?: RawAxiosRequestConfig): AxiosPromise<AgentPool>;
+    getAllAgents(locator?: string, fields?: string, options?: RawAxiosRequestConfig): AxiosPromise<Agents>;
+    getAuthorizedInfo(agentLocator: string, fields?: string, options?: RawAxiosRequestConfig): AxiosPromise<AuthorizedInfo>;
+    getBuildConfigurationRunPolicy(agentLocator: string, fields?: string, options?: RawAxiosRequestConfig): AxiosPromise<CompatibilityPolicy>;
+    getCompatibleBuildTypes(agentLocator: string, fields?: string, options?: RawAxiosRequestConfig): AxiosPromise<BuildTypes>;
+    getEnabledInfo(agentLocator: string, fields?: string, options?: RawAxiosRequestConfig): AxiosPromise<EnabledInfo>;
+    getIncompatibleBuildTypes(agentLocator: string, fields?: string, options?: RawAxiosRequestConfig): AxiosPromise<Compatibilities>;
+    setAgentField(agentLocator: string, field: string, body?: string, options?: RawAxiosRequestConfig): AxiosPromise<string>;
+    setAgentPool(agentLocator: string, fields?: string, body?: AgentPool, options?: RawAxiosRequestConfig): AxiosPromise<AgentPool>;
+    setAuthorizedInfo(agentLocator: string, fields?: string, body?: AuthorizedInfo, options?: RawAxiosRequestConfig): AxiosPromise<AuthorizedInfo>;
+    setBuildConfigurationRunPolicy(agentLocator: string, fields?: string, body?: CompatibilityPolicy, options?: RawAxiosRequestConfig): AxiosPromise<CompatibilityPolicy>;
+    setEnabledInfo(agentLocator: string, fields?: string, body?: EnabledInfo, options?: RawAxiosRequestConfig): AxiosPromise<EnabledInfo>;
+}
+export declare class AgentApi extends BaseAPI implements AgentApiInterface {
+    deleteAgent(agentLocator: string, options?: RawAxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}>>;
+    getAgent(agentLocator: string, fields?: string, options?: RawAxiosRequestConfig): Promise<import("axios").AxiosResponse<Agent, any, {}>>;
+    getAgentField(agentLocator: string, field: string, options?: RawAxiosRequestConfig): Promise<import("axios").AxiosResponse<string, any, {}>>;
+    getAgentPool(agentLocator: string, fields?: string, options?: RawAxiosRequestConfig): Promise<import("axios").AxiosResponse<AgentPool, any, {}>>;
+    getAllAgents(locator?: string, fields?: string, options?: RawAxiosRequestConfig): Promise<import("axios").AxiosResponse<Agents, any, {}>>;
+    getAuthorizedInfo(agentLocator: string, fields?: string, options?: RawAxiosRequestConfig): Promise<import("axios").AxiosResponse<AuthorizedInfo, any, {}>>;
+    getBuildConfigurationRunPolicy(agentLocator: string, fields?: string, options?: RawAxiosRequestConfig): Promise<import("axios").AxiosResponse<CompatibilityPolicy, any, {}>>;
+    getCompatibleBuildTypes(agentLocator: string, fields?: string, options?: RawAxiosRequestConfig): Promise<import("axios").AxiosResponse<BuildTypes, any, {}>>;
+    getEnabledInfo(agentLocator: string, fields?: string, options?: RawAxiosRequestConfig): Promise<import("axios").AxiosResponse<EnabledInfo, any, {}>>;
+    getIncompatibleBuildTypes(agentLocator: string, fields?: string, options?: RawAxiosRequestConfig): Promise<import("axios").AxiosResponse<Compatibilities, any, {}>>;
+    setAgentField(agentLocator: string, field: string, body?: string, options?: RawAxiosRequestConfig): Promise<import("axios").AxiosResponse<string, any, {}>>;
+    setAgentPool(agentLocator: string, fields?: string, body?: AgentPool, options?: RawAxiosRequestConfig): Promise<import("axios").AxiosResponse<AgentPool, any, {}>>;
+    setAuthorizedInfo(agentLocator: string, fields?: string, body?: AuthorizedInfo, options?: RawAxiosRequestConfig): Promise<import("axios").AxiosResponse<AuthorizedInfo, any, {}>>;
+    setBuildConfigurationRunPolicy(agentLocator: string, fields?: string, body?: CompatibilityPolicy, options?: RawAxiosRequestConfig): Promise<import("axios").AxiosResponse<CompatibilityPolicy, any, {}>>;
+    setEnabledInfo(agentLocator: string, fields?: string, body?: EnabledInfo, options?: RawAxiosRequestConfig): Promise<import("axios").AxiosResponse<EnabledInfo, any, {}>>;
+}
+//# sourceMappingURL=agent-api.d.ts.map

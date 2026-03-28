@@ -1,0 +1,1 @@
+{"version":3,"file":"metric-tags.d.ts","sourceRoot":"","sources":["../../../../src/teamcity-client/models/metric-tags.ts"],"names":[],"mappings":"AAeA,OAAO,KAAK,EAAE,SAAS,EAAE,MAAM,cAAc,CAAC;AAO9C,MAAM,WAAW,UAAU;IAMzB,KAAK,CAAC,EAAE,MAAM,CAAC;IAMf,SAAS,CAAC,EAAE,KAAK,CAAC,SAAS,CAAC,CAAC;CAC9B"}

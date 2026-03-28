@@ -1,0 +1,1 @@
+{"version":3,"file":"multiple-operation-result.d.ts","sourceRoot":"","sources":["../../../../src/teamcity-client/models/multiple-operation-result.ts"],"names":[],"mappings":"AAeA,OAAO,KAAK,EAAE,eAAe,EAAE,MAAM,oBAAoB,CAAC;AAO1D,MAAM,WAAW,uBAAuB;IAMtC,KAAK,CAAC,EAAE,MAAM,CAAC;IAMf,UAAU,CAAC,EAAE,MAAM,CAAC;IAMpB,eAAe,CAAC,EAAE,KAAK,CAAC,eAAe,CAAC,CAAC;CAC1C"}

@@ -1,0 +1,1 @@
+{"version":3,"file":"auth-module.d.ts","sourceRoot":"","sources":["../../../../src/teamcity-client/models/auth-module.ts"],"names":[],"mappings":"AAeA,OAAO,KAAK,EAAE,UAAU,EAAE,MAAM,cAAc,CAAC;AAO/C,MAAM,WAAW,UAAU;IAMzB,IAAI,CAAC,EAAE,MAAM,CAAC;IAMd,UAAU,CAAC,EAAE,UAAU,CAAC;CACzB"}

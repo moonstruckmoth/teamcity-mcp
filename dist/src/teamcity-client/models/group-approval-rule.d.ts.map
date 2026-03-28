@@ -1,0 +1,1 @@
+{"version":3,"file":"group-approval-rule.d.ts","sourceRoot":"","sources":["../../../../src/teamcity-client/models/group-approval-rule.ts"],"names":[],"mappings":"AAeA,OAAO,KAAK,EAAE,KAAK,EAAE,MAAM,SAAS,CAAC;AAGrC,OAAO,KAAK,EAAE,KAAK,EAAE,MAAM,SAAS,CAAC;AAOrC,MAAM,WAAW,iBAAiB;IAMhC,mBAAmB,CAAC,EAAE,KAAK,CAAC;IAM5B,sBAAsB,CAAC,EAAE,MAAM,CAAC;IAMhC,KAAK,CAAC,EAAE,KAAK,CAAC;CACf"}

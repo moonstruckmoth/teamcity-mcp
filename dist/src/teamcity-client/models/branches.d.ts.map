@@ -1,0 +1,1 @@
+{"version":3,"file":"branches.d.ts","sourceRoot":"","sources":["../../../../src/teamcity-client/models/branches.ts"],"names":[],"mappings":"AAeA,OAAO,KAAK,EAAE,MAAM,EAAE,MAAM,UAAU,CAAC;AAOvC,MAAM,WAAW,QAAQ;IAMvB,KAAK,CAAC,EAAE,MAAM,CAAC;IAMf,IAAI,CAAC,EAAE,MAAM,CAAC;IAMd,MAAM,CAAC,EAAE,KAAK,CAAC,MAAM,CAAC,CAAC;CACxB"}

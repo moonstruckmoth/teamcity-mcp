@@ -1,0 +1,1 @@
+{"version":3,"file":"comment.d.ts","sourceRoot":"","sources":["../../../../src/teamcity-client/models/comment.ts"],"names":[],"mappings":"AAeA,OAAO,KAAK,EAAE,IAAI,EAAE,MAAM,QAAQ,CAAC;AAOnC,MAAM,WAAW,OAAO;IAMtB,SAAS,CAAC,EAAE,MAAM,CAAC;IAMnB,IAAI,CAAC,EAAE,MAAM,CAAC;IAMd,IAAI,CAAC,EAAE,IAAI,CAAC;CACb"}

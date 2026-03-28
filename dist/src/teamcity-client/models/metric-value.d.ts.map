@@ -1,0 +1,1 @@
+{"version":3,"file":"metric-value.d.ts","sourceRoot":"","sources":["../../../../src/teamcity-client/models/metric-value.ts"],"names":[],"mappings":"AAeA,OAAO,KAAK,EAAE,UAAU,EAAE,MAAM,eAAe,CAAC;AAOhD,MAAM,WAAW,WAAW;IAM1B,IAAI,CAAC,EAAE,MAAM,CAAC;IAMd,KAAK,CAAC,EAAE,MAAM,CAAC;IAMf,IAAI,CAAC,EAAE,UAAU,CAAC;CACnB"}

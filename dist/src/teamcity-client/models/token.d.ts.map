@@ -1,0 +1,1 @@
+{"version":3,"file":"token.d.ts","sourceRoot":"","sources":["../../../../src/teamcity-client/models/token.ts"],"names":[],"mappings":"AAeA,OAAO,KAAK,EAAE,sBAAsB,EAAE,MAAM,2BAA2B,CAAC;AAOxE,MAAM,WAAW,KAAK;IAMpB,IAAI,CAAC,EAAE,MAAM,CAAC;IAMd,YAAY,CAAC,EAAE,MAAM,CAAC;IAMtB,KAAK,CAAC,EAAE,MAAM,CAAC;IAMf,cAAc,CAAC,EAAE,MAAM,CAAC;IAMxB,sBAAsB,CAAC,EAAE,sBAAsB,CAAC;CACjD"}

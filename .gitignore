@@ -10,8 +10,8 @@ coverage/bundles/
 .nyc_output
 
 # Production
-dist/
 build/
+# dist/ is intentionally tracked in this fork so npx -y github:moonstruckmoth/teamcity-mcp works without a build step
 
 # Debug
 npm-debug.log*

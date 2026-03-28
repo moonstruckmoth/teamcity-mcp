@@ -1,0 +1,1 @@
+{"version":3,"file":"matrix-parameter-descriptor.d.ts","sourceRoot":"","sources":["../../../../src/teamcity-client/models/matrix-parameter-descriptor.ts"],"names":[],"mappings":"AAeA,OAAO,KAAK,EAAE,YAAY,EAAE,MAAM,iBAAiB,CAAC;AAOpD,MAAM,WAAW,yBAAyB;IAMxC,KAAK,CAAC,EAAE,KAAK,CAAC,YAAY,CAAC,CAAC;IAM5B,UAAU,CAAC,EAAE,MAAM,CAAC;IAMpB,IAAI,CAAC,EAAE,MAAM,CAAC;CACf"}

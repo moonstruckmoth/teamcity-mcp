@@ -1,0 +1,1 @@
+{"version":3,"file":"build-trigger-customization.d.ts","sourceRoot":"","sources":["../../../../src/teamcity-client/models/build-trigger-customization.ts"],"names":[],"mappings":"AAeA,OAAO,KAAK,EAAE,UAAU,EAAE,MAAM,cAAc,CAAC;AAO/C,MAAM,WAAW,yBAAyB;IAMxC,oBAAoB,CAAC,EAAE,OAAO,CAAC;IAM/B,mCAAmC,CAAC,EAAE,OAAO,CAAC;IAM9C,UAAU,CAAC,EAAE,UAAU,CAAC;CACzB"}

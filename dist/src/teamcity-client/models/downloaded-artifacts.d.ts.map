@@ -1,0 +1,1 @@
+{"version":3,"file":"downloaded-artifacts.d.ts","sourceRoot":"","sources":["../../../../src/teamcity-client/models/downloaded-artifacts.ts"],"names":[],"mappings":"AAeA,OAAO,KAAK,EAAE,YAAY,EAAE,MAAM,iBAAiB,CAAC;AAOpD,MAAM,WAAW,mBAAmB;IAMlC,YAAY,CAAC,EAAE,KAAK,CAAC,YAAY,CAAC,CAAC;IAMnC,eAAe,CAAC,EAAE,MAAM,CAAC;IAMzB,KAAK,CAAC,EAAE,MAAM,CAAC;CAChB"}

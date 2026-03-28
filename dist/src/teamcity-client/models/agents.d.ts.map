@@ -1,0 +1,1 @@
+{"version":3,"file":"agents.d.ts","sourceRoot":"","sources":["../../../../src/teamcity-client/models/agents.ts"],"names":[],"mappings":"AAeA,OAAO,KAAK,EAAE,KAAK,EAAE,MAAM,SAAS,CAAC;AAOrC,MAAM,WAAW,MAAM;IAMrB,KAAK,CAAC,EAAE,MAAM,CAAC;IAMf,QAAQ,CAAC,EAAE,MAAM,CAAC;IAMlB,QAAQ,CAAC,EAAE,MAAM,CAAC;IAMlB,IAAI,CAAC,EAAE,MAAM,CAAC;IAMd,KAAK,CAAC,EAAE,KAAK,CAAC,KAAK,CAAC,CAAC;CACtB"}

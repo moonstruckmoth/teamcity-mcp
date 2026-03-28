@@ -1,0 +1,125 @@
+import type { AxiosInstance, AxiosResponse, RawAxiosRequestConfig } from 'axios';
+import type { TeamCityAPIClientConfig } from '../../api-client';
+import { AgentApi } from '../../teamcity-client/api/agent-api';
+import { AgentPoolApi } from '../../teamcity-client/api/agent-pool-api';
+import { AgentTypeApi } from '../../teamcity-client/api/agent-type-api';
+import { AuditApi } from '../../teamcity-client/api/audit-api';
+import { AvatarApi } from '../../teamcity-client/api/avatar-api';
+import { BuildApi } from '../../teamcity-client/api/build-api';
+import { BuildQueueApi } from '../../teamcity-client/api/build-queue-api';
+import { BuildTypeApi } from '../../teamcity-client/api/build-type-api';
+import { ChangeApi } from '../../teamcity-client/api/change-api';
+import { CloudInstanceApi } from '../../teamcity-client/api/cloud-instance-api';
+import { DeploymentDashboardApi } from '../../teamcity-client/api/deployment-dashboard-api';
+import { GlobalServerSettingsApi } from '../../teamcity-client/api/global-server-settings-api';
+import { GroupApi } from '../../teamcity-client/api/group-api';
+import { HealthApi } from '../../teamcity-client/api/health-api';
+import { InvestigationApi } from '../../teamcity-client/api/investigation-api';
+import { MuteApi } from '../../teamcity-client/api/mute-api';
+import { NodeApi } from '../../teamcity-client/api/node-api';
+import { ProblemApi } from '../../teamcity-client/api/problem-api';
+import { ProblemOccurrenceApi } from '../../teamcity-client/api/problem-occurrence-api';
+import { ProjectApi } from '../../teamcity-client/api/project-api';
+import { RoleApi } from '../../teamcity-client/api/role-api';
+import { RootApi } from '../../teamcity-client/api/root-api';
+import { ServerApi } from '../../teamcity-client/api/server-api';
+import { ServerAuthenticationSettingsApi } from '../../teamcity-client/api/server-authentication-settings-api';
+import { TestApi } from '../../teamcity-client/api/test-api';
+import { TestOccurrenceApi } from '../../teamcity-client/api/test-occurrence-api';
+import { UserApi } from '../../teamcity-client/api/user-api';
+import { VcsRootApi } from '../../teamcity-client/api/vcs-root-api';
+import { VcsRootInstanceApi } from '../../teamcity-client/api/vcs-root-instance-api';
+import { VersionedSettingsApi } from '../../teamcity-client/api/versioned-settings-api';
+import type { TeamCityFullConfig } from '../../teamcity/config';
+export interface TeamCityApiSurface {
+    agents: AgentApi;
+    agentPools: AgentPoolApi;
+    agentTypes: AgentTypeApi;
+    audit: AuditApi;
+    avatars: AvatarApi;
+    builds: BuildApi;
+    buildQueue: BuildQueueApi;
+    buildTypes: BuildTypeApi;
+    changes: ChangeApi;
+    cloudInstances: CloudInstanceApi;
+    deploymentDashboards: DeploymentDashboardApi;
+    globalServerSettings: GlobalServerSettingsApi;
+    groups: GroupApi;
+    health: HealthApi;
+    investigations: InvestigationApi;
+    mutes: MuteApi;
+    nodes: NodeApi;
+    problems: ProblemApi;
+    problemOccurrences: ProblemOccurrenceApi;
+    projects: ProjectApi;
+    roles: RoleApi;
+    root: RootApi;
+    server: ServerApi;
+    serverAuthSettings: ServerAuthenticationSettingsApi;
+    tests: TestOccurrenceApi;
+    testMetadata: TestApi;
+    users: UserApi;
+    vcsRoots: VcsRootApi;
+    vcsRootInstances: VcsRootInstanceApi;
+    versionedSettings: VersionedSettingsApi;
+}
+export type TeamCityApiModuleName = keyof TeamCityApiSurface;
+export interface TeamCityRequestContext {
+    axios: AxiosInstance;
+    baseUrl: string;
+    requestId?: string;
+}
+export interface TeamCityBuildLogChunk {
+    lines: string[];
+    startLine: number;
+    nextStartLine?: number;
+    totalLines?: number;
+}
+export interface TeamCityUnifiedClient {
+    modules: Readonly<TeamCityApiSurface>;
+    http: AxiosInstance;
+    request<T>(fn: (ctx: TeamCityRequestContext) => Promise<T>): Promise<T>;
+    getConfig(): TeamCityFullConfig;
+    getApiConfig(): TeamCityAPIClientConfig;
+    getAxios(): AxiosInstance;
+}
+export interface BuildApiLike {
+    getAllBuilds: (locator?: string, fields?: string, options?: RawAxiosRequestConfig) => Promise<AxiosResponse<unknown>>;
+    getBuild: (buildLocator: string, fields?: string, options?: RawAxiosRequestConfig) => Promise<AxiosResponse<unknown>>;
+    getMultipleBuilds: (locator: string, fields?: string, options?: RawAxiosRequestConfig) => Promise<AxiosResponse<unknown>>;
+    getBuildProblems: (buildLocator: string, fields?: string, options?: RawAxiosRequestConfig) => Promise<AxiosResponse<unknown>>;
+}
+export interface TeamCityClientAdapter extends TeamCityUnifiedClient {
+    testConnection(): Promise<boolean>;
+    listProjects(locator?: string): Promise<unknown>;
+    getProject(projectId: string): Promise<unknown>;
+    listBuilds(locator?: string): Promise<unknown>;
+    getBuild(buildId: string): Promise<unknown>;
+    triggerBuild(buildTypeId: string, branchName?: string, comment?: string): Promise<unknown>;
+    getBuildLog(buildId: string): Promise<string>;
+    getBuildLogChunk(buildId: string, options?: {
+        startLine?: number;
+        lineCount?: number;
+    }): Promise<TeamCityBuildLogChunk>;
+    listBuildTypes(projectId?: string): Promise<unknown>;
+    getBuildType(buildTypeId: string): Promise<unknown>;
+    listTestFailures(buildId: string): Promise<unknown>;
+    builds: BuildApiLike;
+    listBuildArtifacts: (buildId: string, options?: {
+        basePath?: string;
+        locator?: string;
+        fields?: string;
+        resolveParameters?: boolean;
+        logBuildUsage?: boolean;
+    }) => Promise<AxiosResponse<unknown>>;
+    downloadArtifactContent: <T = ArrayBuffer>(buildId: string, artifactPath: string, options?: RawAxiosRequestConfig) => Promise<AxiosResponse<T>>;
+    downloadBuildLogContent: <T = string>(buildId: string, options?: RawAxiosRequestConfig<T>) => Promise<AxiosResponse<T>>;
+    getBuildStatistics: (buildId: string, fields?: string) => Promise<AxiosResponse<unknown>>;
+    listChangesForBuild: (buildId: string, fields?: string) => Promise<AxiosResponse<unknown>>;
+    listSnapshotDependencies: (buildId: string) => Promise<AxiosResponse<unknown>>;
+    listVcsRoots: (projectId?: string) => Promise<unknown>;
+    listAgents: () => Promise<unknown>;
+    listAgentPools: () => Promise<unknown>;
+    baseUrl: string;
+}
+//# sourceMappingURL=client.d.ts.map

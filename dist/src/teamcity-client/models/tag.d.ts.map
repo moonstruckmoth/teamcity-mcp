@@ -1,0 +1,1 @@
+{"version":3,"file":"tag.d.ts","sourceRoot":"","sources":["../../../../src/teamcity-client/models/tag.ts"],"names":[],"mappings":"AAeA,OAAO,KAAK,EAAE,IAAI,EAAE,MAAM,QAAQ,CAAC;AAOnC,MAAM,WAAW,GAAG;IAMlB,IAAI,CAAC,EAAE,MAAM,CAAC;IAMd,KAAK,CAAC,EAAE,IAAI,CAAC;IAMb,OAAO,CAAC,EAAE,OAAO,CAAC;CACnB"}

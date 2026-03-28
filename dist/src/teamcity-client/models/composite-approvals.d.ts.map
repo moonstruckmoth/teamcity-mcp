@@ -1,0 +1,1 @@
+{"version":3,"file":"composite-approvals.d.ts","sourceRoot":"","sources":["../../../../src/teamcity-client/models/composite-approvals.ts"],"names":[],"mappings":"AAeA,OAAO,KAAK,EAAE,qBAAqB,EAAE,MAAM,2BAA2B,CAAC;AAOvE,MAAM,WAAW,kBAAkB;IAMjC,KAAK,CAAC,EAAE,MAAM,CAAC;IAMf,iBAAiB,CAAC,EAAE,KAAK,CAAC,qBAAqB,CAAC,CAAC;CAClD"}

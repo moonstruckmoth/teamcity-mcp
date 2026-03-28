@@ -1,0 +1,1 @@
+{"version":3,"file":"audit-action.d.ts","sourceRoot":"","sources":["../../../../src/teamcity-client/models/audit-action.ts"],"names":[],"mappings":"AAmBA,MAAM,WAAW,WAAW;IAM1B,IAAI,CAAC,EAAE,MAAM,CAAC;IAMd,EAAE,CAAC,EAAE,MAAM,CAAC;IAMZ,OAAO,CAAC,EAAE,MAAM,CAAC;CAClB"}

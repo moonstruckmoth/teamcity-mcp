@@ -1,0 +1,1 @@
+{"version":3,"file":"revision.d.ts","sourceRoot":"","sources":["../../../../src/teamcity-client/models/revision.ts"],"names":[],"mappings":"AAeA,OAAO,KAAK,EAAE,eAAe,EAAE,MAAM,qBAAqB,CAAC;AAO3D,MAAM,WAAW,QAAQ;IAMvB,OAAO,CAAC,EAAE,MAAM,CAAC;IAMjB,eAAe,CAAC,EAAE,MAAM,CAAC;IAMzB,aAAa,CAAC,EAAE,MAAM,CAAC;IAMvB,mBAAmB,CAAC,EAAE,eAAe,CAAC;IAMtC,gBAAgB,CAAC,EAAE,MAAM,CAAC;CAC3B"}

@@ -1,0 +1,1 @@
+{"version":3,"file":"vcs-status.d.ts","sourceRoot":"","sources":["../../../../src/teamcity-client/models/vcs-status.ts"],"names":[],"mappings":"AAeA,OAAO,KAAK,EAAE,cAAc,EAAE,MAAM,oBAAoB,CAAC;AAOzD,MAAM,WAAW,SAAS;IAMxB,OAAO,CAAC,EAAE,cAAc,CAAC;IAMzB,QAAQ,CAAC,EAAE,cAAc,CAAC;CAC3B"}

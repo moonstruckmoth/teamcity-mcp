@@ -1,0 +1,1 @@
+{"version":3,"file":"builds-with-reason.d.ts","sourceRoot":"","sources":["../../../../src/teamcity-client/models/builds-with-reason.ts"],"names":[],"mappings":"AAeA,OAAO,KAAK,EAAE,eAAe,EAAE,MAAM,oBAAoB,CAAC;AAO1D,MAAM,WAAW,gBAAgB;IAM/B,MAAM,CAAC,EAAE,KAAK,CAAC,eAAe,CAAC,CAAC;IAMhC,cAAc,CAAC,EAAE,eAAe,CAAC;CAClC"}

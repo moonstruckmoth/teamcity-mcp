@@ -1,0 +1,94 @@
+import type { AxiosInstance, AxiosPromise, RawAxiosRequestConfig } from 'axios';
+import { BaseAPI, type RequestArgs } from '../base';
+import type { Configuration } from '../configuration';
+import type { Projects } from '../models';
+import type { VersionedSettingsConfig } from '../models';
+import type { VersionedSettingsContextParameters } from '../models';
+import type { VersionedSettingsStatus } from '../models';
+import type { VersionedSettingsTokens } from '../models';
+export declare const VersionedSettingsApiAxiosParamCreator: (configuration?: Configuration) => {
+    addVersionedSettingsTokens: (locator: string, body?: VersionedSettingsTokens, options?: RawAxiosRequestConfig) => Promise<RequestArgs>;
+    checkForVersionedSettingsChanges: (locator: string, options?: RawAxiosRequestConfig) => Promise<RequestArgs>;
+    commitCurrentSettings: (locator: string, options?: RawAxiosRequestConfig) => Promise<RequestArgs>;
+    deleteVersionedSettingsConfigParameter: (locator: string, name: string, options?: RawAxiosRequestConfig) => Promise<RequestArgs>;
+    deleteVersionedSettingsTokens: (locator: string, body?: VersionedSettingsTokens, options?: RawAxiosRequestConfig) => Promise<RequestArgs>;
+    getVersionedSettingsConfig: (locator: string, fields?: string, options?: RawAxiosRequestConfig) => Promise<RequestArgs>;
+    getVersionedSettingsConfigParameter: (locator: string, name: string, options?: RawAxiosRequestConfig) => Promise<RequestArgs>;
+    getVersionedSettingsContextParameters: (locator: string, options?: RawAxiosRequestConfig) => Promise<RequestArgs>;
+    getVersionedSettingsProjectsToLoad: (locator: string, fields?: string, options?: RawAxiosRequestConfig) => Promise<RequestArgs>;
+    getVersionedSettingsStatus: (locator: string, fields?: string, options?: RawAxiosRequestConfig) => Promise<RequestArgs>;
+    getVersionedSettingsTokens: (locator: string, status?: string, options?: RawAxiosRequestConfig) => Promise<RequestArgs>;
+    loadSettingsFromVCS: (locator: string, fields?: string, options?: RawAxiosRequestConfig) => Promise<RequestArgs>;
+    setVersionedSettingsConfig: (locator: string, fields?: string, body?: VersionedSettingsConfig, options?: RawAxiosRequestConfig) => Promise<RequestArgs>;
+    setVersionedSettingsConfigParameter: (locator: string, name: string, body?: string, options?: RawAxiosRequestConfig) => Promise<RequestArgs>;
+    setVersionedSettingsContextParameters: (locator: string, body?: VersionedSettingsContextParameters, options?: RawAxiosRequestConfig) => Promise<RequestArgs>;
+};
+export declare const VersionedSettingsApiFp: (configuration?: Configuration) => {
+    addVersionedSettingsTokens(locator: string, body?: VersionedSettingsTokens, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VersionedSettingsTokens>>;
+    checkForVersionedSettingsChanges(locator: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>>;
+    commitCurrentSettings(locator: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>>;
+    deleteVersionedSettingsConfigParameter(locator: string, name: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>>;
+    deleteVersionedSettingsTokens(locator: string, body?: VersionedSettingsTokens, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VersionedSettingsTokens>>;
+    getVersionedSettingsConfig(locator: string, fields?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VersionedSettingsConfig>>;
+    getVersionedSettingsConfigParameter(locator: string, name: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<string>>;
+    getVersionedSettingsContextParameters(locator: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VersionedSettingsContextParameters>>;
+    getVersionedSettingsProjectsToLoad(locator: string, fields?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Projects>>;
+    getVersionedSettingsStatus(locator: string, fields?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VersionedSettingsStatus>>;
+    getVersionedSettingsTokens(locator: string, status?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VersionedSettingsTokens>>;
+    loadSettingsFromVCS(locator: string, fields?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Projects>>;
+    setVersionedSettingsConfig(locator: string, fields?: string, body?: VersionedSettingsConfig, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VersionedSettingsConfig>>;
+    setVersionedSettingsConfigParameter(locator: string, name: string, body?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<string>>;
+    setVersionedSettingsContextParameters(locator: string, body?: VersionedSettingsContextParameters, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VersionedSettingsContextParameters>>;
+};
+export declare const VersionedSettingsApiFactory: (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) => {
+    addVersionedSettingsTokens(locator: string, body?: VersionedSettingsTokens, options?: RawAxiosRequestConfig): AxiosPromise<VersionedSettingsTokens>;
+    checkForVersionedSettingsChanges(locator: string, options?: RawAxiosRequestConfig): AxiosPromise<void>;
+    commitCurrentSettings(locator: string, options?: RawAxiosRequestConfig): AxiosPromise<void>;
+    deleteVersionedSettingsConfigParameter(locator: string, name: string, options?: RawAxiosRequestConfig): AxiosPromise<void>;
+    deleteVersionedSettingsTokens(locator: string, body?: VersionedSettingsTokens, options?: RawAxiosRequestConfig): AxiosPromise<VersionedSettingsTokens>;
+    getVersionedSettingsConfig(locator: string, fields?: string, options?: RawAxiosRequestConfig): AxiosPromise<VersionedSettingsConfig>;
+    getVersionedSettingsConfigParameter(locator: string, name: string, options?: RawAxiosRequestConfig): AxiosPromise<string>;
+    getVersionedSettingsContextParameters(locator: string, options?: RawAxiosRequestConfig): AxiosPromise<VersionedSettingsContextParameters>;
+    getVersionedSettingsProjectsToLoad(locator: string, fields?: string, options?: RawAxiosRequestConfig): AxiosPromise<Projects>;
+    getVersionedSettingsStatus(locator: string, fields?: string, options?: RawAxiosRequestConfig): AxiosPromise<VersionedSettingsStatus>;
+    getVersionedSettingsTokens(locator: string, status?: string, options?: RawAxiosRequestConfig): AxiosPromise<VersionedSettingsTokens>;
+    loadSettingsFromVCS(locator: string, fields?: string, options?: RawAxiosRequestConfig): AxiosPromise<Projects>;
+    setVersionedSettingsConfig(locator: string, fields?: string, body?: VersionedSettingsConfig, options?: RawAxiosRequestConfig): AxiosPromise<VersionedSettingsConfig>;
+    setVersionedSettingsConfigParameter(locator: string, name: string, body?: string, options?: RawAxiosRequestConfig): AxiosPromise<string>;
+    setVersionedSettingsContextParameters(locator: string, body?: VersionedSettingsContextParameters, options?: RawAxiosRequestConfig): AxiosPromise<VersionedSettingsContextParameters>;
+};
+export interface VersionedSettingsApiInterface {
+    addVersionedSettingsTokens(locator: string, body?: VersionedSettingsTokens, options?: RawAxiosRequestConfig): AxiosPromise<VersionedSettingsTokens>;
+    checkForVersionedSettingsChanges(locator: string, options?: RawAxiosRequestConfig): AxiosPromise<void>;
+    commitCurrentSettings(locator: string, options?: RawAxiosRequestConfig): AxiosPromise<void>;
+    deleteVersionedSettingsConfigParameter(locator: string, name: string, options?: RawAxiosRequestConfig): AxiosPromise<void>;
+    deleteVersionedSettingsTokens(locator: string, body?: VersionedSettingsTokens, options?: RawAxiosRequestConfig): AxiosPromise<VersionedSettingsTokens>;
+    getVersionedSettingsConfig(locator: string, fields?: string, options?: RawAxiosRequestConfig): AxiosPromise<VersionedSettingsConfig>;
+    getVersionedSettingsConfigParameter(locator: string, name: string, options?: RawAxiosRequestConfig): AxiosPromise<string>;
+    getVersionedSettingsContextParameters(locator: string, options?: RawAxiosRequestConfig): AxiosPromise<VersionedSettingsContextParameters>;
+    getVersionedSettingsProjectsToLoad(locator: string, fields?: string, options?: RawAxiosRequestConfig): AxiosPromise<Projects>;
+    getVersionedSettingsStatus(locator: string, fields?: string, options?: RawAxiosRequestConfig): AxiosPromise<VersionedSettingsStatus>;
+    getVersionedSettingsTokens(locator: string, status?: string, options?: RawAxiosRequestConfig): AxiosPromise<VersionedSettingsTokens>;
+    loadSettingsFromVCS(locator: string, fields?: string, options?: RawAxiosRequestConfig): AxiosPromise<Projects>;
+    setVersionedSettingsConfig(locator: string, fields?: string, body?: VersionedSettingsConfig, options?: RawAxiosRequestConfig): AxiosPromise<VersionedSettingsConfig>;
+    setVersionedSettingsConfigParameter(locator: string, name: string, body?: string, options?: RawAxiosRequestConfig): AxiosPromise<string>;
+    setVersionedSettingsContextParameters(locator: string, body?: VersionedSettingsContextParameters, options?: RawAxiosRequestConfig): AxiosPromise<VersionedSettingsContextParameters>;
+}
+export declare class VersionedSettingsApi extends BaseAPI implements VersionedSettingsApiInterface {
+    addVersionedSettingsTokens(locator: string, body?: VersionedSettingsTokens, options?: RawAxiosRequestConfig): Promise<import("axios").AxiosResponse<VersionedSettingsTokens, any, {}>>;
+    checkForVersionedSettingsChanges(locator: string, options?: RawAxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}>>;
+    commitCurrentSettings(locator: string, options?: RawAxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}>>;
+    deleteVersionedSettingsConfigParameter(locator: string, name: string, options?: RawAxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}>>;
+    deleteVersionedSettingsTokens(locator: string, body?: VersionedSettingsTokens, options?: RawAxiosRequestConfig): Promise<import("axios").AxiosResponse<VersionedSettingsTokens, any, {}>>;
+    getVersionedSettingsConfig(locator: string, fields?: string, options?: RawAxiosRequestConfig): Promise<import("axios").AxiosResponse<VersionedSettingsConfig, any, {}>>;
+    getVersionedSettingsConfigParameter(locator: string, name: string, options?: RawAxiosRequestConfig): Promise<import("axios").AxiosResponse<string, any, {}>>;
+    getVersionedSettingsContextParameters(locator: string, options?: RawAxiosRequestConfig): Promise<import("axios").AxiosResponse<VersionedSettingsContextParameters, any, {}>>;
+    getVersionedSettingsProjectsToLoad(locator: string, fields?: string, options?: RawAxiosRequestConfig): Promise<import("axios").AxiosResponse<Projects, any, {}>>;
+    getVersionedSettingsStatus(locator: string, fields?: string, options?: RawAxiosRequestConfig): Promise<import("axios").AxiosResponse<VersionedSettingsStatus, any, {}>>;
+    getVersionedSettingsTokens(locator: string, status?: string, options?: RawAxiosRequestConfig): Promise<import("axios").AxiosResponse<VersionedSettingsTokens, any, {}>>;
+    loadSettingsFromVCS(locator: string, fields?: string, options?: RawAxiosRequestConfig): Promise<import("axios").AxiosResponse<Projects, any, {}>>;
+    setVersionedSettingsConfig(locator: string, fields?: string, body?: VersionedSettingsConfig, options?: RawAxiosRequestConfig): Promise<import("axios").AxiosResponse<VersionedSettingsConfig, any, {}>>;
+    setVersionedSettingsConfigParameter(locator: string, name: string, body?: string, options?: RawAxiosRequestConfig): Promise<import("axios").AxiosResponse<string, any, {}>>;
+    setVersionedSettingsContextParameters(locator: string, body?: VersionedSettingsContextParameters, options?: RawAxiosRequestConfig): Promise<import("axios").AxiosResponse<VersionedSettingsContextParameters, any, {}>>;
+}
+//# sourceMappingURL=versioned-settings-api.d.ts.map

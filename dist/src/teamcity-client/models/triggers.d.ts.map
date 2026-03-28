@@ -1,0 +1,1 @@
+{"version":3,"file":"triggers.d.ts","sourceRoot":"","sources":["../../../../src/teamcity-client/models/triggers.ts"],"names":[],"mappings":"AAeA,OAAO,KAAK,EAAE,OAAO,EAAE,MAAM,WAAW,CAAC;AAOzC,MAAM,WAAW,QAAQ;IAMvB,KAAK,CAAC,EAAE,MAAM,CAAC;IAMf,OAAO,CAAC,EAAE,KAAK,CAAC,OAAO,CAAC,CAAC;CAC1B"}

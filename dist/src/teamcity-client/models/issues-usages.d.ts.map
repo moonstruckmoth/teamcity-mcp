@@ -1,0 +1,1 @@
+{"version":3,"file":"issues-usages.d.ts","sourceRoot":"","sources":["../../../../src/teamcity-client/models/issues-usages.ts"],"names":[],"mappings":"AAeA,OAAO,KAAK,EAAE,UAAU,EAAE,MAAM,eAAe,CAAC;AAOhD,MAAM,WAAW,YAAY;IAM3B,UAAU,CAAC,EAAE,KAAK,CAAC,UAAU,CAAC,CAAC;IAM/B,IAAI,CAAC,EAAE,MAAM,CAAC;IAMd,KAAK,CAAC,EAAE,MAAM,CAAC;CAChB"}

@@ -1,0 +1,1 @@
+{"version":3,"file":"health-category.d.ts","sourceRoot":"","sources":["../../../../src/teamcity-client/models/health-category.ts"],"names":[],"mappings":"AAmBA,MAAM,WAAW,cAAc;IAM7B,EAAE,CAAC,EAAE,MAAM,CAAC;IAMZ,IAAI,CAAC,EAAE,MAAM,CAAC;IAMd,WAAW,CAAC,EAAE,MAAM,CAAC;IAMrB,OAAO,CAAC,EAAE,MAAM,CAAC;CAClB"}

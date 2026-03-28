@@ -1,0 +1,1 @@
+{"version":3,"file":"download-info.d.ts","sourceRoot":"","sources":["../../../../src/teamcity-client/models/download-info.ts"],"names":[],"mappings":"AAeA,OAAO,KAAK,EAAE,oBAAoB,EAAE,MAAM,0BAA0B,CAAC;AAGrE,OAAO,KAAK,EAAE,KAAK,EAAE,MAAM,SAAS,CAAC;AAOrC,MAAM,WAAW,YAAY;IAM3B,KAAK,CAAC,EAAE,KAAK,CAAC;IAMd,YAAY,CAAC,EAAE,KAAK,CAAC,oBAAoB,CAAC,CAAC;IAM3C,KAAK,CAAC,EAAE,MAAM,CAAC;CAChB"}

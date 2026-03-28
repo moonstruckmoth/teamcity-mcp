@@ -1,0 +1,1 @@
+{"version":3,"file":"properties.d.ts","sourceRoot":"","sources":["../../../../src/teamcity-client/models/properties.ts"],"names":[],"mappings":"AAeA,OAAO,KAAK,EAAE,QAAQ,EAAE,MAAM,YAAY,CAAC;AAO3C,MAAM,WAAW,UAAU;IAMzB,KAAK,CAAC,EAAE,MAAM,CAAC;IAMf,IAAI,CAAC,EAAE,MAAM,CAAC;IAMd,QAAQ,CAAC,EAAE,KAAK,CAAC,QAAQ,CAAC,CAAC;CAC5B"}

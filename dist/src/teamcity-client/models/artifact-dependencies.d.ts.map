@@ -1,0 +1,1 @@
+{"version":3,"file":"artifact-dependencies.d.ts","sourceRoot":"","sources":["../../../../src/teamcity-client/models/artifact-dependencies.ts"],"names":[],"mappings":"AAeA,OAAO,KAAK,EAAE,kBAAkB,EAAE,MAAM,uBAAuB,CAAC;AAOhE,MAAM,WAAW,oBAAoB;IAMnC,KAAK,CAAC,EAAE,MAAM,CAAC;IAMf,qBAAqB,CAAC,EAAE,KAAK,CAAC,kBAAkB,CAAC,CAAC;IAMlD,OAAO,CAAC,EAAE,MAAM,CAAC;CAClB"}

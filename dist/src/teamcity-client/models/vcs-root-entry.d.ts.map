@@ -1,0 +1,1 @@
+{"version":3,"file":"vcs-root-entry.d.ts","sourceRoot":"","sources":["../../../../src/teamcity-client/models/vcs-root-entry.ts"],"names":[],"mappings":"AAeA,OAAO,KAAK,EAAE,OAAO,EAAE,MAAM,YAAY,CAAC;AAO1C,MAAM,WAAW,YAAY;IAM3B,EAAE,CAAC,EAAE,MAAM,CAAC;IAMZ,SAAS,CAAC,EAAE,OAAO,CAAC;IAMpB,UAAU,CAAC,EAAE,OAAO,CAAC;IAMrB,gBAAgB,CAAC,EAAE,MAAM,CAAC;CAC3B"}

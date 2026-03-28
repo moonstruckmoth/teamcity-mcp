@@ -1,0 +1,1 @@
+{"version":3,"file":"problem-target.d.ts","sourceRoot":"","sources":["../../../../src/teamcity-client/models/problem-target.ts"],"names":[],"mappings":"AAeA,OAAO,KAAK,EAAE,QAAQ,EAAE,MAAM,YAAY,CAAC;AAG3C,OAAO,KAAK,EAAE,KAAK,EAAE,MAAM,SAAS,CAAC;AAOrC,MAAM,WAAW,aAAa;IAM5B,UAAU,CAAC,EAAE,OAAO,CAAC;IAMrB,KAAK,CAAC,EAAE,KAAK,CAAC;IAMd,QAAQ,CAAC,EAAE,QAAQ,CAAC;CACrB"}

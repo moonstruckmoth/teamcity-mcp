@@ -1,0 +1,90 @@
+import type { AxiosInstance, AxiosPromise, RawAxiosRequestConfig } from 'axios';
+import { BaseAPI, type RequestArgs } from '../base';
+import type { Configuration } from '../configuration';
+import type { Agents } from '../models';
+import type { ApprovalInfo } from '../models';
+import type { Build } from '../models';
+import type { BuildCancelRequest } from '../models';
+import type { Builds } from '../models';
+import type { Tags } from '../models';
+export declare const BuildQueueApiAxiosParamCreator: (configuration?: Configuration) => {
+    addBuildToQueue: (moveToTop?: boolean, body?: Build, options?: RawAxiosRequestConfig) => Promise<RequestArgs>;
+    addTagsToBuildOfBuildQueue: (buildLocator: string, body?: Tags, options?: RawAxiosRequestConfig) => Promise<RequestArgs>;
+    approveQueuedBuild: (buildLocator: string, fields?: string, approveAll?: boolean, body?: string, options?: RawAxiosRequestConfig) => Promise<RequestArgs>;
+    cancelQueuedBuild: (queuedBuildLocator: string, body?: BuildCancelRequest, options?: RawAxiosRequestConfig) => Promise<RequestArgs>;
+    deleteAllQueuedBuilds: (locator?: string, fields?: string, options?: RawAxiosRequestConfig) => Promise<RequestArgs>;
+    deleteQueuedBuild: (queuedBuildLocator: string, options?: RawAxiosRequestConfig) => Promise<RequestArgs>;
+    getAllQueuedBuilds: (locator?: string, fields?: string, options?: RawAxiosRequestConfig) => Promise<RequestArgs>;
+    getApprovalInfo: (buildLocator: string, fields?: string, options?: RawAxiosRequestConfig) => Promise<RequestArgs>;
+    getCompatibleAgentsForBuild: (queuedBuildLocator: string, fields?: string, options?: RawAxiosRequestConfig) => Promise<RequestArgs>;
+    getQueuedBuild: (queuedBuildLocator: string, fields?: string, options?: RawAxiosRequestConfig) => Promise<RequestArgs>;
+    getQueuedBuildPosition: (queuePosition: string, fields?: string, options?: RawAxiosRequestConfig) => Promise<RequestArgs>;
+    getQueuedBuildTags: (buildLocator: string, locator?: string, fields?: string, options?: RawAxiosRequestConfig) => Promise<RequestArgs>;
+    setQueuedBuildPosition: (queuePosition: string, fields?: string, body?: Build, options?: RawAxiosRequestConfig) => Promise<RequestArgs>;
+    setQueuedBuildsOrder: (fields?: string, body?: Builds, options?: RawAxiosRequestConfig) => Promise<RequestArgs>;
+};
+export declare const BuildQueueApiFp: (configuration?: Configuration) => {
+    addBuildToQueue(moveToTop?: boolean, body?: Build, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Build>>;
+    addTagsToBuildOfBuildQueue(buildLocator: string, body?: Tags, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>>;
+    approveQueuedBuild(buildLocator: string, fields?: string, approveAll?: boolean, body?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApprovalInfo>>;
+    cancelQueuedBuild(queuedBuildLocator: string, body?: BuildCancelRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Build>>;
+    deleteAllQueuedBuilds(locator?: string, fields?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>>;
+    deleteQueuedBuild(queuedBuildLocator: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>>;
+    getAllQueuedBuilds(locator?: string, fields?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Builds>>;
+    getApprovalInfo(buildLocator: string, fields?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApprovalInfo>>;
+    getCompatibleAgentsForBuild(queuedBuildLocator: string, fields?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Agents>>;
+    getQueuedBuild(queuedBuildLocator: string, fields?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Build>>;
+    getQueuedBuildPosition(queuePosition: string, fields?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Build>>;
+    getQueuedBuildTags(buildLocator: string, locator?: string, fields?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Tags>>;
+    setQueuedBuildPosition(queuePosition: string, fields?: string, body?: Build, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Build>>;
+    setQueuedBuildsOrder(fields?: string, body?: Builds, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Builds>>;
+};
+export declare const BuildQueueApiFactory: (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) => {
+    addBuildToQueue(moveToTop?: boolean, body?: Build, options?: RawAxiosRequestConfig): AxiosPromise<Build>;
+    addTagsToBuildOfBuildQueue(buildLocator: string, body?: Tags, options?: RawAxiosRequestConfig): AxiosPromise<void>;
+    approveQueuedBuild(buildLocator: string, fields?: string, approveAll?: boolean, body?: string, options?: RawAxiosRequestConfig): AxiosPromise<ApprovalInfo>;
+    cancelQueuedBuild(queuedBuildLocator: string, body?: BuildCancelRequest, options?: RawAxiosRequestConfig): AxiosPromise<Build>;
+    deleteAllQueuedBuilds(locator?: string, fields?: string, options?: RawAxiosRequestConfig): AxiosPromise<void>;
+    deleteQueuedBuild(queuedBuildLocator: string, options?: RawAxiosRequestConfig): AxiosPromise<void>;
+    getAllQueuedBuilds(locator?: string, fields?: string, options?: RawAxiosRequestConfig): AxiosPromise<Builds>;
+    getApprovalInfo(buildLocator: string, fields?: string, options?: RawAxiosRequestConfig): AxiosPromise<ApprovalInfo>;
+    getCompatibleAgentsForBuild(queuedBuildLocator: string, fields?: string, options?: RawAxiosRequestConfig): AxiosPromise<Agents>;
+    getQueuedBuild(queuedBuildLocator: string, fields?: string, options?: RawAxiosRequestConfig): AxiosPromise<Build>;
+    getQueuedBuildPosition(queuePosition: string, fields?: string, options?: RawAxiosRequestConfig): AxiosPromise<Build>;
+    getQueuedBuildTags(buildLocator: string, locator?: string, fields?: string, options?: RawAxiosRequestConfig): AxiosPromise<Tags>;
+    setQueuedBuildPosition(queuePosition: string, fields?: string, body?: Build, options?: RawAxiosRequestConfig): AxiosPromise<Build>;
+    setQueuedBuildsOrder(fields?: string, body?: Builds, options?: RawAxiosRequestConfig): AxiosPromise<Builds>;
+};
+export interface BuildQueueApiInterface {
+    addBuildToQueue(moveToTop?: boolean, body?: Build, options?: RawAxiosRequestConfig): AxiosPromise<Build>;
+    addTagsToBuildOfBuildQueue(buildLocator: string, body?: Tags, options?: RawAxiosRequestConfig): AxiosPromise<void>;
+    approveQueuedBuild(buildLocator: string, fields?: string, approveAll?: boolean, body?: string, options?: RawAxiosRequestConfig): AxiosPromise<ApprovalInfo>;
+    cancelQueuedBuild(queuedBuildLocator: string, body?: BuildCancelRequest, options?: RawAxiosRequestConfig): AxiosPromise<Build>;
+    deleteAllQueuedBuilds(locator?: string, fields?: string, options?: RawAxiosRequestConfig): AxiosPromise<void>;
+    deleteQueuedBuild(queuedBuildLocator: string, options?: RawAxiosRequestConfig): AxiosPromise<void>;
+    getAllQueuedBuilds(locator?: string, fields?: string, options?: RawAxiosRequestConfig): AxiosPromise<Builds>;
+    getApprovalInfo(buildLocator: string, fields?: string, options?: RawAxiosRequestConfig): AxiosPromise<ApprovalInfo>;
+    getCompatibleAgentsForBuild(queuedBuildLocator: string, fields?: string, options?: RawAxiosRequestConfig): AxiosPromise<Agents>;
+    getQueuedBuild(queuedBuildLocator: string, fields?: string, options?: RawAxiosRequestConfig): AxiosPromise<Build>;
+    getQueuedBuildPosition(queuePosition: string, fields?: string, options?: RawAxiosRequestConfig): AxiosPromise<Build>;
+    getQueuedBuildTags(buildLocator: string, locator?: string, fields?: string, options?: RawAxiosRequestConfig): AxiosPromise<Tags>;
+    setQueuedBuildPosition(queuePosition: string, fields?: string, body?: Build, options?: RawAxiosRequestConfig): AxiosPromise<Build>;
+    setQueuedBuildsOrder(fields?: string, body?: Builds, options?: RawAxiosRequestConfig): AxiosPromise<Builds>;
+}
+export declare class BuildQueueApi extends BaseAPI implements BuildQueueApiInterface {
+    addBuildToQueue(moveToTop?: boolean, body?: Build, options?: RawAxiosRequestConfig): Promise<import("axios").AxiosResponse<Build, any, {}>>;
+    addTagsToBuildOfBuildQueue(buildLocator: string, body?: Tags, options?: RawAxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}>>;
+    approveQueuedBuild(buildLocator: string, fields?: string, approveAll?: boolean, body?: string, options?: RawAxiosRequestConfig): Promise<import("axios").AxiosResponse<ApprovalInfo, any, {}>>;
+    cancelQueuedBuild(queuedBuildLocator: string, body?: BuildCancelRequest, options?: RawAxiosRequestConfig): Promise<import("axios").AxiosResponse<Build, any, {}>>;
+    deleteAllQueuedBuilds(locator?: string, fields?: string, options?: RawAxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}>>;
+    deleteQueuedBuild(queuedBuildLocator: string, options?: RawAxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any, {}>>;
+    getAllQueuedBuilds(locator?: string, fields?: string, options?: RawAxiosRequestConfig): Promise<import("axios").AxiosResponse<Builds, any, {}>>;
+    getApprovalInfo(buildLocator: string, fields?: string, options?: RawAxiosRequestConfig): Promise<import("axios").AxiosResponse<ApprovalInfo, any, {}>>;
+    getCompatibleAgentsForBuild(queuedBuildLocator: string, fields?: string, options?: RawAxiosRequestConfig): Promise<import("axios").AxiosResponse<Agents, any, {}>>;
+    getQueuedBuild(queuedBuildLocator: string, fields?: string, options?: RawAxiosRequestConfig): Promise<import("axios").AxiosResponse<Build, any, {}>>;
+    getQueuedBuildPosition(queuePosition: string, fields?: string, options?: RawAxiosRequestConfig): Promise<import("axios").AxiosResponse<Build, any, {}>>;
+    getQueuedBuildTags(buildLocator: string, locator?: string, fields?: string, options?: RawAxiosRequestConfig): Promise<import("axios").AxiosResponse<Tags, any, {}>>;
+    setQueuedBuildPosition(queuePosition: string, fields?: string, body?: Build, options?: RawAxiosRequestConfig): Promise<import("axios").AxiosResponse<Build, any, {}>>;
+    setQueuedBuildsOrder(fields?: string, body?: Builds, options?: RawAxiosRequestConfig): Promise<import("axios").AxiosResponse<Builds, any, {}>>;
+}
+//# sourceMappingURL=build-queue-api.d.ts.map

@@ -1,0 +1,1 @@
+{"version":3,"file":"compatibilities.d.ts","sourceRoot":"","sources":["../../../../src/teamcity-client/models/compatibilities.ts"],"names":[],"mappings":"AAeA,OAAO,KAAK,EAAE,aAAa,EAAE,MAAM,iBAAiB,CAAC;AAOrD,MAAM,WAAW,eAAe;IAM9B,KAAK,CAAC,EAAE,MAAM,CAAC;IAMf,aAAa,CAAC,EAAE,KAAK,CAAC,aAAa,CAAC,CAAC;CACtC"}
