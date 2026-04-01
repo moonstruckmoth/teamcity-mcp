@@ -491,6 +491,7 @@ interface UpdateBuildConfigArgs {
   description?: string;
   paused?: boolean;
   artifactRules?: string;
+  buildNumberPattern?: string;
 }
 interface AddParameterArgs {
   buildTypeId: string;
@@ -4165,6 +4166,10 @@ const FULL_MODE_TOOLS: ToolDefinition[] = [
         description: { type: 'string', description: 'New description' },
         paused: { type: 'boolean', description: 'Pause/unpause configuration' },
         artifactRules: { type: 'string', description: 'Artifact rules' },
+        buildNumberPattern: {
+          type: 'string',
+          description: 'Build number pattern (e.g. %dep.SomeConfig.build.number%)',
+        },
       },
       required: ['buildTypeId'],
     },
@@ -4180,11 +4185,18 @@ const FULL_MODE_TOOLS: ToolDefinition[] = [
 
         const current = await manager.retrieveConfiguration(typedArgs.buildTypeId);
         if (current) {
-          const updates: { name?: string; description?: string; artifactRules?: string } = {};
+          const updates: {
+            name?: string;
+            description?: string;
+            artifactRules?: string;
+            buildNumberFormat?: string;
+          } = {};
           if (typedArgs.name != null && typedArgs.name !== '') updates.name = typedArgs.name;
           if (typedArgs.description !== undefined) updates.description = typedArgs.description;
           if (typedArgs.artifactRules !== undefined)
             updates.artifactRules = typedArgs.artifactRules;
+          if (typedArgs.buildNumberPattern !== undefined)
+            updates.buildNumberFormat = typedArgs.buildNumberPattern;
 
           if (Object.keys(updates).length > 0) {
             await manager.validateUpdates(current, updates as never);
@@ -4215,6 +4227,14 @@ const FULL_MODE_TOOLS: ToolDefinition[] = [
               typedArgs.artifactRules
             );
           }
+          if (typedArgs.buildNumberPattern !== undefined) {
+            await adapter.modules.buildTypes.setBuildTypeField(
+              typedArgs.buildTypeId,
+              'settings/buildNumberPattern',
+              typedArgs.buildNumberPattern,
+              { headers: { 'Content-Type': 'text/plain', Accept: 'text/plain' } }
+            );
+          }
         }
       } catch {
         // Fallback path if manager cannot be used (e.g., getBuildType not mocked)
@@ -4239,6 +4259,14 @@ const FULL_MODE_TOOLS: ToolDefinition[] = [
             adapter.http,
             typedArgs.buildTypeId,
             typedArgs.artifactRules
+          );
+        }
+        if (typedArgs.buildNumberPattern !== undefined) {
+          await adapter.modules.buildTypes.setBuildTypeField(
+            typedArgs.buildTypeId,
+            'settings/buildNumberPattern',
+            typedArgs.buildNumberPattern,
+            { headers: { 'Content-Type': 'text/plain', Accept: 'text/plain' } }
           );
         }
       }

@@ -42066,7 +42066,11 @@ var FULL_MODE_TOOLS = [
         name: { type: "string", description: "New name" },
         description: { type: "string", description: "New description" },
         paused: { type: "boolean", description: "Pause/unpause configuration" },
-        artifactRules: { type: "string", description: "Artifact rules" }
+        artifactRules: { type: "string", description: "Artifact rules" },
+        buildNumberPattern: {
+          type: "string",
+          description: "Build number pattern (e.g. %dep.SomeConfig.build.number%)"
+        }
       },
       required: ["buildTypeId"]
     },
@@ -42082,6 +42086,8 @@ var FULL_MODE_TOOLS = [
           if (typedArgs.description !== void 0) updates.description = typedArgs.description;
           if (typedArgs.artifactRules !== void 0)
             updates.artifactRules = typedArgs.artifactRules;
+          if (typedArgs.buildNumberPattern !== void 0)
+            updates.buildNumberFormat = typedArgs.buildNumberPattern;
           if (Object.keys(updates).length > 0) {
             await manager.validateUpdates(current, updates);
             await manager.applyUpdates(current, updates);
@@ -42110,6 +42116,14 @@ var FULL_MODE_TOOLS = [
               typedArgs.artifactRules
             );
           }
+          if (typedArgs.buildNumberPattern !== void 0) {
+            await adapter.modules.buildTypes.setBuildTypeField(
+              typedArgs.buildTypeId,
+              "settings/buildNumberPattern",
+              typedArgs.buildNumberPattern,
+              { headers: { "Content-Type": "text/plain", Accept: "text/plain" } }
+            );
+          }
         }
       } catch {
         if (typedArgs.name != null && typedArgs.name !== "") {
@@ -42133,6 +42147,14 @@ var FULL_MODE_TOOLS = [
             adapter.http,
             typedArgs.buildTypeId,
             typedArgs.artifactRules
+          );
+        }
+        if (typedArgs.buildNumberPattern !== void 0) {
+          await adapter.modules.buildTypes.setBuildTypeField(
+            typedArgs.buildTypeId,
+            "settings/buildNumberPattern",
+            typedArgs.buildNumberPattern,
+            { headers: { "Content-Type": "text/plain", Accept: "text/plain" } }
           );
         }
       }

@@ -146,6 +146,25 @@ describe('Tool: update_build_config', () => {
     );
   });
 
+  it('updates buildNumberPattern via settings/buildNumberPattern endpoint', async () => {
+    const { getRequiredTool } = await import('../src/tools');
+    const tool = getRequiredTool('update_build_config') as ToolDefinition;
+
+    const args = {
+      buildTypeId: 'HoneycombHaven_ApiGatewayBuild',
+      buildNumberPattern: '%dep.SomeOtherConfig.build.number%',
+    };
+
+    await tool.handler(args);
+
+    expect(setBuildTypeField).toHaveBeenCalledWith(
+      'HoneycombHaven_ApiGatewayBuild',
+      'settings/buildNumberPattern',
+      '%dep.SomeOtherConfig.build.number%',
+      { headers: { 'Content-Type': 'text/plain', Accept: 'text/plain' } }
+    );
+  });
+
   it('properly encodes buildTypeId in URL path', async () => {
     const { getRequiredTool } = await import('../src/tools');
     const tool = getRequiredTool('update_build_config') as ToolDefinition;
