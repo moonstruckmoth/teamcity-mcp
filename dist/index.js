@@ -43130,6 +43130,7 @@ var FULL_MODE_TOOLS = [
         },
         name: { type: "string", description: "Step name" },
         type: { type: "string", description: "Step type (e.g., simpleRunner)" },
+        disabled: { type: "boolean", description: "Disable or enable the step" },
         properties: { type: "object", description: "Step properties" }
       },
       required: ["buildTypeId", "action"]
@@ -43141,6 +43142,7 @@ var FULL_MODE_TOOLS = [
         stepId: import_zod4.z.string().min(1).optional(),
         name: import_zod4.z.string().optional(),
         type: import_zod4.z.string().optional(),
+        disabled: import_zod4.z.boolean().optional(),
         properties: import_zod4.z.record(import_zod4.z.string(), import_zod4.z.unknown()).optional()
       }).superRefine((value, ctx) => {
         if (value.action === "update" || value.action === "delete") {
@@ -43235,8 +43237,9 @@ var FULL_MODE_TOOLS = [
               if (mergedType != null) {
                 updatePayload["type"] = mergedType;
               }
-              if (existingStep?.disabled != null) {
-                updatePayload["disabled"] = existingStep.disabled;
+              const mergedDisabled = typedArgs.disabled ?? existingStep?.disabled;
+              if (mergedDisabled != null) {
+                updatePayload["disabled"] = mergedDisabled;
               }
               const rawProps = typedArgs.properties ?? {};
               const providedProps = Object.fromEntries(

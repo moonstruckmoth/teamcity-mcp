@@ -5321,6 +5321,7 @@ const FULL_MODE_TOOLS: ToolDefinition[] = [
         },
         name: { type: 'string', description: 'Step name' },
         type: { type: 'string', description: 'Step type (e.g., simpleRunner)' },
+        disabled: { type: 'boolean', description: 'Disable or enable the step' },
         properties: { type: 'object', description: 'Step properties' },
       },
       required: ['buildTypeId', 'action'],
@@ -5333,6 +5334,7 @@ const FULL_MODE_TOOLS: ToolDefinition[] = [
           stepId: z.string().min(1).optional(),
           name: z.string().optional(),
           type: z.string().optional(),
+          disabled: z.boolean().optional(),
           properties: z.record(z.string(), z.unknown()).optional(),
         })
         .superRefine((value, ctx) => {
@@ -5451,8 +5453,10 @@ const FULL_MODE_TOOLS: ToolDefinition[] = [
                 updatePayload['type'] = mergedType;
               }
 
-              if (existingStep?.disabled != null) {
-                updatePayload['disabled'] = existingStep.disabled;
+              // Prefer incoming disabled flag; fall back to preserving the existing value
+              const mergedDisabled = typedArgs.disabled ?? existingStep?.disabled;
+              if (mergedDisabled != null) {
+                updatePayload['disabled'] = mergedDisabled;
               }
 
               const rawProps = typedArgs.properties ?? {};
